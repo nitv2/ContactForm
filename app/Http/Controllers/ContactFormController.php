@@ -13,7 +13,8 @@ class ContactFormController extends Controller
      */
     public function index()
     {
-        //
+        //view/contact/indexを返す。
+        return view('contact.index');
     }
 
     /**
@@ -23,7 +24,8 @@ class ContactFormController extends Controller
      */
     public function create()
     {
-        //
+        ///view/contact/createを返す。
+        return view('contact.create');
     }
 
     /**

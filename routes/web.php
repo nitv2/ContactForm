@@ -19,6 +19,15 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::resource('contacts', 'ContactFormController')->only([
-    'index', 'show'
-]);
+// prefix：フォルダ指定　middleware=>auth：認証する仕組みを提供
+Route::group(['prefix' => 'contact', 'middleware' => 'auth'], function(){
+    Route::get('index', 'ContactFormController@index')->name('contact.index');
+    Route::get('create', 'ContactFormController@create')->name('contact.create');
+
+    
+});
+
+
+
+
+Auth::routes();
