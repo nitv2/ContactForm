@@ -79,7 +79,7 @@ class ContactFormController extends Controller
         if($contact->gender == 0){
             $gender = '男性';
         }else{
-            $gender = '女性';
+            $gener = '女性';
         }
 
         switch($contact->age){
@@ -115,6 +115,9 @@ class ContactFormController extends Controller
     public function edit($id)
     {
         //
+        $contact = ContactForm::find($id);
+
+        return view('contact.edit', compact('contact'));
     }
 
     /**
