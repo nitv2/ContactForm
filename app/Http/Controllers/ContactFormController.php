@@ -73,7 +73,37 @@ class ContactFormController extends Controller
      */
     public function show($id)
     {
-        //
+        //エロクアントを仕様
+        $contact = ContactForm::find($id);
+
+        if($contact->gender == 0){
+            $gender = '男性';
+        }else{
+            $gender = '女性';
+        }
+
+        switch($contact->age){
+            case 1:
+                $age ='〜19歳';
+                break;
+            case 2:
+                $age ='20歳〜29歳';
+                break;
+            case 3:
+                $age ='30歳〜39歳';
+                break;
+            case 4:
+                $age ='40歳〜49歳';
+                break;
+            case 5:
+                $age ='50歳〜59歳';
+                break; 
+            case 6:
+                $age ='60歳〜';
+                break;
+        }
+
+        return view('contact.show', compact('contact','gender','age'));
     }
 
     /**
