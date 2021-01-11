@@ -13,7 +13,8 @@
                             {{ session('status') }}
                         </div>
                     @endif
-                    <form method"POST" action="">
+                    <form method="post" action="{{ route('contact.store') }}">
+                        @csrf
                         氏名
                         <input type="text" name="your_name">
                         <br>
@@ -31,7 +32,7 @@
                         <input type="radio" name="gender" value='1'>女性</input>
                         <br>
                         年齢
-                        <select name="name">
+                        <select name="age">
                             <option value=""選択してください></option>
                             <option value="1">〜19歳</option>
                             <option value="2">20歳〜29歳</option>
@@ -48,7 +49,6 @@
                         <br>
                         <input class="btn btn-info" type="submit" value="登録する">
                     </form>
-                    createです。
                 </div>
             </div>
         </div>
