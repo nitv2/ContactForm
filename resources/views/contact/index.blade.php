@@ -38,8 +38,8 @@
                             @endforeach
                         </tbody>
                     </table>
-
-
+                    {{-- ページネーション --}}
+                    {{ $contacts->links() }}
                 </div>
             </div>
         </div>
