@@ -15,9 +15,11 @@ class CreateShopsTable extends Migration
     {
         Schema::create('shops', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('shop_name', 20);
-            $table->unsignedBigInteger('area_id');
+            $table->string('shop_name',20);
+            $table->unsignedBigInteger('area_id'); //FK
             $table->timestamps();
+            // 外部キー制約
+            $table->foreign('area_id')->references('id')->on('areas');
         });
     }
 
